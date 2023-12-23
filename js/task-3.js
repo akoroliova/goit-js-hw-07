@@ -1,1 +1,8 @@
-// У 3 та 4 завданнях рекомендую використовувати метод для рядків trim() - String.prototype.trim() - JavaScript | MDN Уважно визначайте події у завданнях (попри те, що у т/з є прямі підказки, помилок із цього приводу чимало).
+const inputElement = document.querySelector("input#name-input");
+const outputElement = document.querySelector("span#name-output");
+
+inputElement.addEventListener("input", (event) => {
+  inputElement.value = inputElement.value.trim();
+  const trimmedValue = event.currentTarget.value.trim();
+  outputElement.textContent = trimmedValue !== "" ? trimmedValue : "Anonymous";
+});
