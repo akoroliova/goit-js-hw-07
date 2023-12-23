@@ -1,3 +1,23 @@
-// У 3 та 4 завданнях рекомендую використовувати метод для рядків trim() - String.prototype.trim() - JavaScript | MDN Уважно визначайте події у завданнях (попри те, що у т/з є прямі підказки, помилок із цього приводу чимало).
+const loginForm = document.querySelector("form.login-form");
 
-// 4 завдання -- всі інпути заповнені. Тільки тоді виводимо об’єкт у консоль.
+loginForm.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const email = form.elements.email.value.trim();
+  const password = form.elements.password.value.trim();
+
+  if (email === "" || password === "") {
+    return console.log("All form fields must be filled in");
+  }
+
+  const userObject = {};
+  userObject.email = email;
+  userObject.password = password;
+
+  console.log(userObject);
+
+  form.reset();
+}
