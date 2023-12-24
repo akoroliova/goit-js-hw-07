@@ -6,3 +6,7 @@ inputElement.addEventListener("input", (event) => {
   const trimmedValue = event.currentTarget.value.trim();
   outputElement.textContent = trimmedValue !== "" ? trimmedValue : "Anonymous";
 });
+
+//For CSS markup task:
+const greeting = document.querySelector("h1");
+greeting.classList.add("greeting");
