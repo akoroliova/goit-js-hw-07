@@ -31,12 +31,8 @@ function createBoxes(amount) {
 
 function destroyBoxes() {
   boxes.innerHTML = "";
-  while (boxes.firstChild) {
-    boxes.removeChild(boxes.firstChild);
-  }
 }
 
-buttonCreate.addEventListener("click", handleCreate);
 function handleCreate(event) {
   const amount = parseInt(input.value);
   if (amount >= 1 && amount <= 100) {
@@ -46,7 +42,9 @@ function handleCreate(event) {
   }
 }
 
-buttonDestroy.addEventListener("click", handleDestroy);
 function handleDestroy(event) {
   destroyBoxes();
 }
+
+buttonCreate.addEventListener("click", handleCreate);
+buttonDestroy.addEventListener("click", handleDestroy);

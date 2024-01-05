@@ -24,19 +24,24 @@ const images = [
     alt: "Zebras on Zebra",
   },
 ];
-
 const gallery = document.querySelector("ul.gallery");
+const fragment = document.createDocumentFragment();
 
-images.map((image) => {
+images.forEach((image) => {
   const liElement = document.createElement("li");
+  const aElement = document.createElement("a");
   const imgElement = document.createElement("img");
 
   liElement.classList.add("gallery-item");
+  aElement.classList.add("gallery-link");
   imgElement.classList.add("gallery-image");
 
   imgElement.src = image.url;
   imgElement.alt = image.alt;
 
-  liElement.appendChild(imgElement);
-  gallery.appendChild(liElement);
+  aElement.appendChild(imgElement);
+  liElement.appendChild(aElement);
+  fragment.appendChild(liElement);
 });
+
+gallery.appendChild(fragment);
